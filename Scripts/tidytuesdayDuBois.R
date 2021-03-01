@@ -27,6 +27,8 @@ labs(title="Occupations of White and Colored Populations",
    axis.text = element_text(colour = "#9E8356FF"),
    plot.title = element_text(colour = "#1C1A1FFF"),
    plot.subtitle = element_text(colour = "#1C1A1FFF"))+
-  scale_fill_manual(values=c("#0E84B4FF", "#B50A2AFF"))
+  scale_fill_manual(values=c("#0E84B4FF", "#B50A2AFF"))+
+   ggsave(here("Output","tidytuesdayDuBois.png"),
+          width = 8, height=6)
   
 
