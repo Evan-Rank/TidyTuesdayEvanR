@@ -19,7 +19,7 @@ view(games)
 
 #Filter out genre
 FPSgames <- games %>% #I'm personally curious in the playerbase history for multiplayer first person shooter games, which I have personal experience with.
-  filter(gamename %in% c("Counter-Strike: Global Offensive",
+  filter(gamename %in% c("Counter-Strike: Global Offensive", #top FPS games on Steam
                          "PLAYERUNKNOWN'S BATTLEGROUNDS", "Apex Legends", 
                          "Team Fortress 2", "Tom Clancy's Rainbow Six Siege", "Destiny 2", "PAYDAY 2"))
 
@@ -48,7 +48,7 @@ ggplot(FPSmean, aes(x=year, y=mean_monthly_players, color=gamename, label=gamena
         axis.text = element_text(color = "grey10"),
         plot.title = element_text(size=20),
         panel.background=element_rect(fill="grey96"))+
-  scale_color_viridis_d()+
+  scale_color_viridis_d()+#colorblind-friendly color scale
   ggsave(here("Output","FPSgames.png"),
-         width = 9, height = 6)#colorblind-friendly color scale
+         width = 9, height = 6)
   
